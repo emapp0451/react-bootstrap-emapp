@@ -32,19 +32,19 @@ export default class Home extends Component{
     render(){
         return(
         <div>
-            <section class="bg-light">
-            <div class="container">
+            <section className="bg-light">
+            <div className="container">
                 <h3>Aim of Easy Move</h3>
                 {this.state.headers.map((header, index) => (
                     <div>
                       <p key={index}>{header.headerId == 1 ? header.introduction : ""}</p>
                     </div>
                 ))}
-              <div class="row">
-                <div class="col-md-4 mb-4">
-                  <div class="card shadow border-0 h-100"><a href="/city/bangalore"><img src={ban} alt="" class="card-img-top" /></a>
-                    <div class="card-body">
-                      <h5> <a href="/city/bangalore" class="text-dark">Welcome to Bangalore</a></h5>
+              <div className="row">
+                <div className="col-md-4 mb-4">
+                  <div className="card shadow border-0 h-100"><a href="/city/bangalore"><img src={ban} alt="" className="card-img-top" /></a>
+                    <div className="card-body">
+                      <h5> <a href="/city/bangalore" className="text-dark">Welcome to Bangalore</a></h5>
                       {this.state.contacts.map((contact, index) => (
                        <div>
                           <h6 key={index}>{contact.cityName == "Bangalore" ?  "population: " + contact.population : ""}</h6>
@@ -57,37 +57,37 @@ export default class Home extends Component{
                           ))}
                         </div> 
                       ))}
-                      <p class="card-text"><a href="#">Read more</a></p>
+                      <p className="card-text"><a href="#">Read more</a></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card shadow border-0 h-100"><a href="/city/bhopal"><img src={bhopal} alt="" class="card-img-top" /></a>
-                    <div class="card-body">
-                      <h5> <a href="/city/bhopal" class="text-dark">Welcome to Bhopal</a></h5>
+                <div className="col-md-4 mb-4">
+                  <div className="card shadow border-0 h-100"><a href="/city/bhopal"><img src={bhopal} alt="" className="card-img-top" /></a>
+                    <div className="card-body">
+                      <h5> <a href="/city/bhopal" className="text-dark">Welcome to Bhopal</a></h5>
                       {this.state.contacts.map((contact, index) => (
                        <div>
-                          <h6 key={index}>{contact.cityId == 2 ?  "population: " + contact.population : ""}</h6>
-                          <h6 key={index}>{contact.cityId == 2 ?  "Language spoken: " + contact.languageSpoken : ""}</h6>
-                          <h6 key={index}>{contact.cityId == 2 ?  "Weather: " + contact.weather : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Bhopal" ?  "population: " + contact.population : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Bhopal" ?  "Language spoken: " + contact.languageSpoken : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Bhopal" ?  "Weather: " + contact.weather : ""}</h6>
                         </div> 
                       ))}
-                      <p class="card-text"><a href="#">Read more</a></p>
+                      <p className="card-text"><a href="#">Read more</a></p>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card shadow border-0 h-100"><a href="city/chennai"><img src={chennai} alt="" class="card-img-top" /></a>
-                    <div class="card-body">
-                      <h5> <a href="city/chennai" class="text-dark">Welcome to Chennai</a></h5>
+                <div className="col-md-4 mb-4">
+                  <div className="card shadow border-0 h-100"><a href="city/chennai"><img src={chennai} alt="" className="card-img-top" /></a>
+                    <div className="card-body">
+                      <h5> <a href="city/chennai" className="text-dark">Welcome to Chennai</a></h5>
                       {this.state.contacts.map((contact, index) => (
                        <div>
-                          <h6 key={index}>{contact.cityId == 3 ?  "population: " + contact.population : ""}</h6>
-                          <h6 key={index}>{contact.cityId == 3 ?  "Language spoken: " + contact.languageSpoken : ""}</h6>
-                          <h6 key={index}>{contact.cityId == 3 ?  "Weather: " + contact.weather : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Chennai" ?  "population: " + contact.population : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Chennai" ?  "Language spoken: " + contact.languageSpoken : ""}</h6>
+                          <h6 key={index}>{contact.cityName == "Chennai" ?  "Weather: " + contact.weather : ""}</h6>
                         </div> 
                       ))}
-                      <p class="card-text"><a href="#">Read more</a></p>
+                      <p className="card-text"><a href="#">Read more</a></p>
                     </div>
                   </div>
                 </div>

@@ -1,34 +1,119 @@
 import React, { Component } from 'react'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemHeading,
+    AccordionItemPanel,
+    AccordionItemButton
+} from 'react-accessible-accordion';
 import {style} from 'components/about_component/About.css'
 export default class Filterd extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            value: this.props.match.params.values
+            value: [],
+            value: this.props.match.params.values.split("-",3),
+            hospitals: [],
+            colleges: []
         };
         console.log(props);
     }
+    componentDidMount () {
+        if(this.state.value[1]=='treatment'){
+        fetch('/test/findallHospitalAndArea?spec='+ this.state.value[2] + '&cityName=' + this.state.value[0])
+          .then(res => res.json())
+          .then((data) => {
+            this.setState({ hospitals: data })
+          })
+          .catch(console.log);
+        }
+        if(this.state.value[1]=='education'){
+            fetch('/test/findallCollegeAndArea?type='+ this.state.value[2] + '&cityName=' + this.state.value[0])
+              .then(res => res.json())
+              .then((data) => {
+                this.setState({ colleges: data })
+              })
+              .catch(console.log);
+            }
+        }
     render(){
+        let datas;
+
+        if(this.state.value[1]=='treatment'){
+            datas =   <section className="bg-light">
+                        <div className="container">
+                        <div className="row">
+                        <div className="col-lg-12 order-1 order-lg-1">
+                        <h2>Hospitals in {this.state.value[0]} for {this.state.value[2]} treatment</h2>
+                    <Accordion>
+                    {this.state.hospitals.map((us, index) => (
+                           <AccordionItem> 
+                               <AccordionItemHeading >
+                               <AccordionItemButton className="p-3 mb-2 bg-info text-white">
+                               <h4 key={index}>{us.hospitalName}</h4>
+                                </AccordionItemButton>
+                               </AccordionItemHeading>
+                               <AccordionItemPanel>
+                                    <h5 className="text-primary">Address: </h5>
+                                        <p key={index}>{us.address}, contact: {us.contact}</p>
+                                    <h5 className="text-primary">About Hospital: </h5>
+									    <p key={index}>{us.hospital_description}</p>
+                                    <h5 className="text-primary">Locality: </h5>
+									    <p key={index}>{us.area_name}</p>
+                                        <h6 className="text-success">About Locality: </h6>
+                                            <p key={index}>{us.area_description}</p>
+                                            <h6 className="text-success">Market: </h6>
+                                            <p key={index}>{us.market}</p>
+                                            <p key={index}><h6 className="text-success">Available Transports: </h6>{us.transportsAvailable}</p>
+                                </AccordionItemPanel>
+                            </AccordionItem>
+                      ))}
+                    </Accordion>
+            
+        </div>
+        </div>
+        </div>
+        </section>
+        }
+        if(this.state.value[1]=='education'){
+            datas =   <section className="bg-light">
+                        <div className="container">
+                        <div className="row">
+                        <div className="col-lg-12 order-1 order-lg-1">
+                        <h2>Colleges in {this.state.value[0]} for {this.state.value[2]}</h2>
+           <Accordion>
+                    {this.state.colleges.map((us, index) => (
+                           <AccordionItem> 
+                               <AccordionItemHeading >
+                               <AccordionItemButton className="p-3 mb-2 bg-info text-white">
+                               <h6 key={index}>{us.collegeName}</h6>
+                                </AccordionItemButton>
+                               </AccordionItemHeading>
+                               <AccordionItemPanel>
+                               <h5 className="text-primary">Address: </h5>
+                                        <p key={index}>{us.address}</p>
+                                    <h5 className="text-primary">About College: </h5>
+									    <p key={index}>{us.collegeDescription}</p>
+                                    <h5 className="text-primary">Locality: </h5>
+									    <p key={index}>{us.area_name}</p>
+                                        <h6 className="text-success">About Locality: </h6>
+                                            <p key={index}>{us.description}</p>
+                                            <h6 className="text-success">Market: </h6>
+                                            <p key={index}>{us.market}</p>
+                                            <p key={index}><h6 className="text-success">Available Transports: </h6>{us.transports_available}</p>
+                                </AccordionItemPanel>
+                            </AccordionItem>
+                      ))}
+                    </Accordion>
+                </div>
+                </div>
+                </div>
+                </section>
+        }
         return(
-            <section class="bg-light">
-                <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 order-1 order-lg-1">
-                        <h3 className="heading">FILTERD DATA{ this.state.value }</h3>
-                        <p>This is the sight which helps you decide moving between area, cites and countries
-                            It helps you in deciding you why you want to go to that place how your move will be successfull at one place</p>
-                        <p>If some want to move from one place to another. They need lot of information before moving. Like how is that place. Say after completing his college he wants to go out to look for job. Then what area of that city will be good for him to move respective of his stream (what qualifications he have). What facilities he can get in which city and in what part of the city.</p>
-                        <p>And if some one is changing the job then he can search for the areas nearby his new office. How exactly that place is.</p>
-                        <h2 className="heading">How it helps</h2>
-                        <p>1.	Finding the home: we can suggest them P.G’s, hostels, rented flats..etc.</p>
-                        <p>2.	Finding food: We can suggest them good small restaurants, Dhabas, maids, and also suggest them in that area what all options are there for food.</p>
-                        <p>3.	Finding hospitals: how hospitals, clinics are there in that area.</p>
-                        <p>4.	Finding Institutes: help them find good institutes which are helpful to them.</p>
-                        <p>5.	What all things they need to carry along with them when they are moving to that place.</p>
-                    </div>
+            <div>
+                   {datas}
                 </div>
-                </div>
-            </section>
         )
     }
 }

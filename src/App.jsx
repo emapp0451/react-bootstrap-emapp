@@ -11,6 +11,7 @@ import Hotel from './components/hotel_component/Hotel';
 import City from './components/city_component/City';
 import Filter from './components/filter_component/Filter';
 import Filterd from './components/filterd_component/Filterd';
+import College from './components/college_component/College';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/city/:cityId" exact component={City} />
         <Route path="/hospital/:cityId" exact component={Hospital} />
         <Route path="/hotel/:cityId" exact component={Hotel} />
+        <Route path="/college/:cityId" exact component={College} />
      </div>
    </Router>
   );

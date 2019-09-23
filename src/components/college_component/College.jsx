@@ -6,7 +6,7 @@ import {
     AccordionItemPanel,
     AccordionItemButton
 } from 'react-accessible-accordion';
-export default class Hospital extends Component{
+export default class College extends Component{
       constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +18,7 @@ export default class Hospital extends Component{
         console.log(props);
     } 
       componentDidMount () {
-      fetch('/test/findallHospitalByCityId?cityName='+ this.state.value)
+      fetch('/test/findallCollegeByCityId?cityName='+ this.state.value)
         .then(res => res.json())
         .then((data) => {
           this.setState({ user: data })
@@ -32,19 +32,19 @@ export default class Hospital extends Component{
             <div className="container">
             <div className="row">
                 <div className="col-lg-12 order-1 order-lg-1">
-                    <h2>List of hospitals in {this.state.value}</h2>
+                    <h2>List of colleges in {this.state.value}</h2>
 
                     <Accordion>
                     {this.state.user.map((us, index) => (
                            <AccordionItem> 
                                <AccordionItemHeading >
                                <AccordionItemButton className="p-3 mb-2 bg-info text-white">
-                               <h3 key={index}>{us.hospitalName}</h3>
+                               <h3 key={index}>{us.collegeName}</h3>
                                 </AccordionItemButton>
                                </AccordionItemHeading>
                                <AccordionItemPanel>
                                     <p key={index}><h6>Address: </h6>{us.address}</p>
-                                    <p key={index}><h6>About: </h6>{us.description}</p>
+                                    <p key={index}><h6>About: </h6>{us.collegeDescription}</p>
                                 </AccordionItemPanel>
                             </AccordionItem>
                       ))}

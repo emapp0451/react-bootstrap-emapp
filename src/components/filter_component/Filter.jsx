@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
-import {style} from 'components/about_component/About.css'
+import {style} from 'components/filter_component/Filter.css';
+import { Redirect } from 'react-router-dom';
 export default class Filter extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            city: "",
-            reason: "",
-            type: "",
+            city: "a",
+            reason: "a",
+            type: "a",
             value: "",
+            cityError: "",
+            enable: "disabled"
         };
         this.populate = this.populate.bind(this);
     }
@@ -48,6 +51,9 @@ export default class Filter extends Component{
        }
        handleCity = (event) => {
            this.setState ( { city: event.target.value })
+           if(event.target.value != "a" && this.state.reason != "a"  && this.state.type != "a"){
+            this.setState ( { enable: "active"})
+        }
        }
        handleReason = (event) => {
         var v1 = this.refs.reason;
@@ -74,35 +80,42 @@ export default class Filter extends Component{
             v2.options.add(newOption);
         }
         this.setState ( { reason: event.target.value })
+        if(this.state.city != "a" && this.state.reason != "a"  && this.state.type != "a"){
+            this.setState ( { enable: "active"})
+        }
     }
-    handleType = (event) => {
+    handleType = (event) => { 
         this.setState ( { type: event.target.value })
+        if(this.state.city != "a"){
+            this.setState ( { enable: "active"})
+        }
     }
        handleSubmit = (event) => {
            alert(JSON.stringify(this.state));
           event.preventDefault();
        }
        passData = (event) => {
-            this.setState ( { value: this.state.city + "-" + this.state.reason + "-" + this.state.type})
+            this.setState ( { value: this.state.city + "-" + this.state.reason + "-" + this.state.type});
        }
     render(){
         return(
             <section className="bg-light">
             <div className="container">
                 <form className="fform-inlin justify-content-center" onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                <div class="col-lg-12 order-1 order-lg-1">
                 <p>Here, you can filter based on the city. where you are looking to move and also for what purpose are you looking to move to the respective city.
                     And will show you all the minor to major results based on the filter </p>
+                <div className="center">
+                <div className="form-group">
+                <div className="col-lg-12 order-1 order-lg-1">
                 </div>
                 <label for="city" className="col-sm-2 control-label">City</label>
                 <div className="col-sm-10">
-                <select ut type="city" className="form-control" id="city" name="city" onChange={this.handleCity} placeholder="City" ref="city">
+                <select type="city" className="form-control" id="city" name="city" onChange={this.handleCity} placeholder="City" ref="city">
                 <option value="" disabled selected>Choose your option</option>
                             <option value="bangalore">Bangalore</option>
                             <option value="bhopal">Bhopal</option>
                             <option value="pune">Pune</option>
-                </select>
+                </select> 
                 </div>
                 </div>
                 <div className="form-group">
@@ -124,8 +137,9 @@ export default class Filter extends Component{
                 </select>
                 </div>
                 </div>
+                </div>
                 <div className="text-center">
-                <a className="btn btn-primary" href={"/filterd-data/" + this.state.value} onClick={this.passData} role="button">Submit</a>
+                <a className={"btn btn-primary " + this.state.enable} href={"/filterd-data/" + this.state.value} onClick={this.passData} role="button" >Submit</a>
                 </div>
                 </form>
             </div>
