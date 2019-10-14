@@ -35,6 +35,8 @@ export default class City extends Component{
     render(){
         
         return(
+            <div>
+                <div className="pb-sm-5">
             <section className="bg-light">
             <div className="container">
             <div className="row">
@@ -106,6 +108,13 @@ export default class City extends Component{
             </div>
             </div>
         </section>
+        </div>
+        <footer className="footer fixed-bottom font-small bg-light">
+        <div className="footer-copyright text-center py-3">© 2019 Copyright:
+          Easy Move
+        </div>
+      </footer>
+      </div>
         )
     }
 }

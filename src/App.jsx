@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Home from './components/home_component/Home';
 import About from './components/about_component/About';
 import Contact from './components/contact_component/Contact';
@@ -18,6 +18,7 @@ function App() {
    <Router>
      <div>
        <CustomNavbar />
+       <Route exact path="/" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />

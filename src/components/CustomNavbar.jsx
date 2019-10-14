@@ -19,9 +19,6 @@ export default class CustomNavbar extends Component{
                     <li><a href="/about">About</a></li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0" action="/action_page.php">
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Search" name="search" />
-                </div>
                 <a className="navbar-brand" href="/filter">Filter</a>
                 </form>
             </div>

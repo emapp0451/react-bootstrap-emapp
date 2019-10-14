@@ -6,7 +6,6 @@ import {
     AccordionItemPanel,
     AccordionItemButton
 } from 'react-accessible-accordion';
-import {style} from 'components/about_component/About.css'
 export default class Filterd extends Component{
     constructor(props) {
         super(props);
@@ -40,7 +39,9 @@ export default class Filterd extends Component{
         let datas;
 
         if(this.state.value[1]=='treatment'){
-            datas =   <section className="bg-light">
+            datas =  <div>
+                <div className="pb-sm-5">
+                    <section className="bg-light">
                         <div className="container">
                         <div className="row">
                         <div className="col-lg-12 order-1 order-lg-1">
@@ -74,9 +75,18 @@ export default class Filterd extends Component{
         </div>
         </div>
         </section>
+        </div>
+        <footer className="footer fixed-bottom font-small bg-light">
+        <div className="footer-copyright text-center py-3">© 2019 Copyright:
+        Easy Move
+        </div>
+    </footer>
+    </div>
         }
         if(this.state.value[1]=='education'){
-            datas =   <section className="bg-light">
+            datas =   <div>   
+                <div className="pb-sm-5">
+            <section className="bg-light">
                         <div className="container">
                         <div className="row">
                         <div className="col-lg-12 order-1 order-lg-1">
@@ -109,6 +119,13 @@ export default class Filterd extends Component{
                 </div>
                 </div>
                 </section>
+                </div>
+                <footer className="footer fixed-bottom font-small bg-light">
+                <div className="footer-copyright text-center py-3">© 2019 Copyright:
+                Easy Move
+                </div>
+            </footer>
+            </div>
         }
         return(
             <div>

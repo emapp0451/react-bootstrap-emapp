@@ -28,6 +28,8 @@ export default class Hospital extends Component{
     render(){
 
         return(
+            <div>
+                <div className="pb-sm-5">
             <section className="bg-light">
             <div className="container">
             <div className="row">
@@ -53,6 +55,15 @@ export default class Hospital extends Component{
                     </div>
                 </div>
             </section>
+            </div>
+            <footer className="footer fixed-bottom font-small bg-light">
+            <div className="panel panel-primary">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+              Easy Move
+            </div>
+            </div>
+          </footer>
+          </div>
         )
     }
 }

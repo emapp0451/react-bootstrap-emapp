@@ -3,6 +3,8 @@ import {style} from 'components/about_component/About.css'
 export default class About extends Component{
     render(){
         return(
+            <div>
+            <div className="pb-sm-5">
             <section class="bg-light">
                 <div class="container">
                 <div class="row">
@@ -22,6 +24,13 @@ export default class About extends Component{
                 </div>
                 </div>
             </section>
+            </div>
+            <footer className="footer fixed-bottom font-small bg-light">
+            <div className="footer-copyright text-center py-3">© 2019 Copyright:
+            Easy Move
+            </div>
+        </footer>
+        </div>
         )
     }
 }
