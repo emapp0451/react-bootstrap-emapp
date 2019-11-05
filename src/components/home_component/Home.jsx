@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Jumbotron, Container, Row, Col, img, Button} from 'react-bootstrap';
-import ban from 'assets/ban.jpg';
-import bhopal from 'assets/bhopal.jpg';
-import chennai from 'assets/chennai.jpg';
-import header from 'assets/paragraphs.json';
+//import ban from 'assets/ban.jpg';
+//import bhopal from 'assets/bhopal.jpg';
+//import chennai from 'assets/chennai.jpg';
+import header from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/assets/paragraphs.json';
 
 
 export default class Home extends Component{
@@ -44,7 +44,7 @@ export default class Home extends Component{
                 <br></br>
               <div className="row">
                 <div className="col-md-4 mb-4">
-                  <div className="card shadow border-0 h-100"><a href="/city/bangalore"><img src={ban} alt="" className="card-img-top" /></a>
+                  <div className="card shadow border-0 h-100"><a href="/city/bangalore"><img src={'https://drive.google.com/thumbnail?id=1ZJPKrC7pPU-gEknj6MMUQN5fiGGXJCdY'} alt="" className="card-img-top" /></a>
                     <div className="card-body">
                       <h5> <a href="/city/bangalore" className="text-dark">Welcome to Bangalore</a></h5>
                       {this.state.contacts.map((contact, index) => (
@@ -58,7 +58,7 @@ export default class Home extends Component{
                   </div>
                 </div>
                 <div className="col-md-4 mb-4">
-                  <div className="card shadow border-0 h-100"><a href="/city/bhopal"><img src={bhopal} alt="" className="card-img-top" /></a>
+                  <div className="card shadow border-0 h-100"><a href="/city/bhopal"><img src={'https://drive.google.com/thumbnail?id=1H8u4qvhMG0RDPu4k9zfqfG3O0BDKJo4O'} alt="" className="card-img-top" /></a>
                     <div className="card-body">
                       <h5> <a href="/city/bhopal" className="text-dark">Welcome to Bhopal</a></h5>
                       {this.state.contacts.map((contact, index) => (
@@ -72,7 +72,7 @@ export default class Home extends Component{
                   </div>
                 </div>
                 <div className="col-md-4 mb-4">
-                  <div className="card shadow border-0 h-100"><a href="city/chennai"><img src={chennai} alt="" className="card-img-top" /></a>
+                  <div className="card shadow border-0 h-100"><a href="city/chennai"><img src={'https://drive.google.com/thumbnail?id=1Xf7uuhMlzQXVBxNLXwvdUbP7NLDc21xj'} alt="" className="card-img-top" /></a>
                     <div className="card-body">
                       <h5> <a href="city/chennai" className="text-dark">Welcome to Chennai</a></h5>
                       {this.state.contacts.map((contact, index) => (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {style} from 'components/bangalore_component/Bangalore.css'
-import hospital from 'assets/hospital.jpg';
-import hotel from 'assets/hotel.jpg';
-import college from 'assets/college.jpg';
+import {style} from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/components/bangalore_component/Bangalore.css'
+//import hospital from 'assets/hospital.jpg';
+//import hotel from 'assets/hotel.jpg';
+//import college from 'assets/college.jpg';
 import { Link } from 'react-router-dom';
 export default class City extends Component{
     constructor(props) {
@@ -50,7 +50,7 @@ export default class City extends Component{
                 <br></br>
                 <div className="row">
                     <div className="col-md-4 mb-4">
-                        <div className="card shadow border-0 h-100"><Link to={"/hospital/" + this.state.value} ><img src={hospital} alt="" className="card-img-top" /></Link>
+                        <div className="card shadow border-0 h-100"><Link to={"/hospital/" + this.state.value} ><img src={'https://drive.google.com/thumbnail?id=1CyvRtBM2i4_OB1pD5WskSXnjIrylVD2X'} alt="" className="card-img-top" /></Link>
                             <div className="card-body">
                                 <h5> <Link to={"/hospital/" + this.state.value} className="text-dark">Hospital in {this.state.value}</Link></h5>
                                 <p className="card-text"><a href="#">Read more</a></p>
@@ -58,7 +58,7 @@ export default class City extends Component{
                         </div>
                     </div>
                     <div className="col-md-4 mb-4">
-                        <div className="card shadow border-0 h-100"><a href={"/hotel/" + this.state.value}><img src={hotel} alt="" className="card-img-top" /></a>
+                        <div className="card shadow border-0 h-100"><a href={"/hotel/" + this.state.value}><img src={'https://drive.google.com/thumbnail?id=1qRBWYHU7nVA1QJP2HhX16kTSxLY8kaPG'} alt="" className="card-img-top" /></a>
                             <div className="card-body">
                                 <h5> <a href={"/hospital/" + this.state.vaule} className="text-dark">Hotels in {this.state.value}</a></h5>
                                 <p className="card-text"><a href="#">Read more</a></p>
@@ -66,7 +66,7 @@ export default class City extends Component{
                         </div>
                     </div>
                     <div className="col-md-4 mb-4">
-                        <div className="card shadow border-0 h-100"><a href={"/college/" + this.state.value}><img src={college} alt="" className="card-img-top" /></a>
+                        <div className="card shadow border-0 h-100"><a href={"/college/" + this.state.value}><img src={'https://drive.google.com/thumbnail?id=1MT_VNo_3AYBd0x2ER1HrE6CBe4IM-OCx'} alt="" className="card-img-top" /></a>
                             <div className="card-body">
                                 <h5> <a href={"/college/" + this.state.value} className="text-dark">Colleges in {this.state.value}</a></h5>
                                 <p className="card-text"><a href="#">Read more</a></p>

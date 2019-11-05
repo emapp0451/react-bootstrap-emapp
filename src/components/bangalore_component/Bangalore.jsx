@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {style} from 'components/bangalore_component/Bangalore.css'
-import hospital from 'assets/hospital.jpg';
-import hotel from 'assets/hotel.jpg';
-import college from 'assets/college.jpg';
+import {style} from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/components/bangalore_component/Bangalore.css'
+//import hospital from 'assets/hospital.jpg';
+//import hotel from 'assets/hotel.jpg';
+//import college from 'assets/college.jpg';
 export default class Bangalore extends Component{
     constructor(props){
         super(props);
@@ -40,7 +40,7 @@ export default class Bangalore extends Component{
                 <br></br>
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="/hospital/bangalore"><img src={hospital} alt="" class="card-img-top" /></a>
+                        <div class="card shadow border-0 h-100"><a href="/hospital/bangalore"><img src={'https://drive.google.com/open?id=1CyvRtBM2i4_OB1pD5WskSXnjIrylVD2X'} alt="" class="card-img-top" /></a>
                             <div class="card-body">
                                 <h5> <a href="/hospital/bangalore" class="text-dark">Hospital in Bangalore</a></h5>
                                 <p class="card-text"><a href="#">Read more</a></p>
@@ -48,7 +48,7 @@ export default class Bangalore extends Component{
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="/hotel/bangalore"><img src={hotel} alt="" class="card-img-top" /></a>
+                        <div class="card shadow border-0 h-100"><a href="/hotel/bangalore"><img src={'https://drive.google.com/thumbnail?id=1qRBWYHU7nVA1QJP2HhX16kTSxLY8kaPG'} alt="" class="card-img-top" /></a>
                             <div class="card-body">
                                 <h5> <a href="/hotel/bangalore" class="text-dark">Hotels in Bangalore</a></h5>
                                 <p class="card-text"><a href="#">Read more</a></p>
@@ -56,7 +56,7 @@ export default class Bangalore extends Component{
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <div class="card shadow border-0 h-100"><a href="college"><img src={college} alt="" class="card-img-top" /></a>
+                        <div class="card shadow border-0 h-100"><a href="college"><img src={'https://drive.google.com/thumbnail?id=1MT_VNo_3AYBd0x2ER1HrE6CBe4IM-OCx'} alt="" class="card-img-top" /></a>
                             <div class="card-body">
                                 <h5> <a href="bangalore" class="text-dark">Colleges in Bangalore</a></h5>
                                 <p class="card-text"><a href="#">Read more</a></p>
