@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {style} from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/components/about_component/About.css'
+//import {style} from '/home/vikrant/Application/emApp/EmAppv1.3/react-bootstrap-emapp/src/components/about_component/About.css'
 export default class About extends Component{
     render(){
         return(

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {style} from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/components/filter_component/Filter.css';
+//import {style} from '/home/vikrant/Application/emApp/EmAppv1.3/react-bootstrap-emapp/src/components/filter_component/Filter.css';
 import { Redirect } from 'react-router-dom';
 export default class Filter extends Component{
 

@@ -4,7 +4,7 @@ import { Jumbotron, Container, Row, Col, img, Button} from 'react-bootstrap';
 //import ban from 'assets/ban.jpg';
 //import bhopal from 'assets/bhopal.jpg';
 //import chennai from 'assets/chennai.jpg';
-import header from '/home/vikrant/Application/emApp/EmApp V1.2/react-bootstrap-emapp-master/src/assets/paragraphs.json';
+import header from '/home/vikrant/Application/emApp/EmAppv1.3/react-bootstrap-emapp/src/assets/paragraphs.json';
 
 
 export default class Home extends Component{
